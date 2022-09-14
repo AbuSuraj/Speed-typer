@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Barohal-News-Portal</title>
+    <title>Blog</title>
     <!-- Bootsrap link  -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -26,7 +26,7 @@
     
     <!-- acordian  -->
     <main class="container mt-5">
-      <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion accordion-flush my-5" id="accordionFlushExample">
         <div class="accordion-item shadow">
           <h2 class="accordion-header" id="flush-headingOne">
             <button
@@ -51,40 +51,30 @@
                 <li class="fs-4">
                   <h6 class="fs-4">Local Storage</h6>
                   <p class="fs-5">
-                    Shared between all tabs and condition from the same origin
+                   => Shared between all tabs and condition from the same origin
                   </p>
-                  <h6 class="fs-4">Let</h6>
+                  <h6 class="fs-4">Session Sotrage</h6>
                   <p class="fs-5">
-                    The scope of a let variable is block scope.
+                   => Another tab with the same page will have a diffrent session storage.
                   </p>
-                  <h6 class="fs-4">Const</h6>
+                  
+                </li>
+                <li class="fs-4">
+                  <h6 class="fs-4">Local Storage</h6>
                   <p class="fs-5">
-                    The scope of a const variable is block scope.
+                    => Data dose not expire.
+                  </p>
+                  <h6 class="fs-4">Session Sotrage</h6>
+                  <p class="fs-5">
+                    => Exist within the current browser tab.
                   </p>
                 </li>
                 <li class="fs-4">
-                  <h6 class="fs-4">var</h6>
-                  <p class="fs-5">
-                    It can be updated and re-declared into the scope.
-                  </p>
-                  <h6 class="fs-4">Let</h6>
-                  <p class="fs-5">
-                    It can be updated but cannot be re-declared into the scope.
-                  </p>
-                  <h6 class="fs-4">Const</h6>
-                  <p class="fs-5">
-                    It cannot be updated or re-declared into the scope.
-                  </p>
-                </li>
-                <li class="fs-4">
-                  <h6 class="fs-4">var</h6>
-                  <p class="fs-5">It can be declared without initialization.</p>
-                  <h6 class="fs-4">Let</h6>
-                  <p class="fs-5">It can be declared without initialization.</p>
-                  <h6 class="fs-4">Const</h6>
-                  <p class="fs-5">
-                    It cannot be declared without initialization..
-                  </p>
+                  <h6 class="fs-4">Local Storage</h6>
+                  <p class="fs-5">=> Survive browser restart.</p>
+                  <h6 class="fs-4">Session Sotrage</h6>
+                  <p class="fs-5">=> Survive page refresh but not tab close</p>
+                  
                 </li>
               </ol>
             </div>
@@ -100,7 +90,7 @@
               aria-expanded="false"
               aria-controls="flush-collapseTwo"
             >
-              Difference Between Arrow Function and Regular Function?
+              Difference Between Block Scope and Global Scope?
             </button>
           </h2>
           <div
@@ -110,36 +100,22 @@
             data-bs-parent="#accordionFlushExample"
           >
             <div class="accordion-body">
-              <ol>
-                <li class="fs-4">
-                  <h6 class="fs-4">Regular function</h6>
+              <div>
+                <!-- <li class="fs-4"> -->
+                  <h6 class="fs-4">Block Scope</h6>
                   <p class="fs-5">
-                    In a traditional function, there is an arguments local
-                    variable. If the number of arguments to our function is
-                    dynamic, using arguments allows us to easily do things like
-                    calculating the maximum number of passed arguments.
+                   => Variables declared inside a { } block cannot be accessed from outside the block <br>
+                   => Block scopes are what you get when you use if statements, for statements, and the like. <br>
+                   =>
                   </p>
-                  <h6 class="fs-4">Arrow function</h6>
+                  <h6 class="fs-4">Global Scope</h6>
                   <p class="fs-5">
-                    In the arrow function, there are no arguments, if we access
-                    arguments in the arrow function will return the arguments of
-                    the closest non-arrow parent function.
+                    => Variables declared Globally (outside any function) have Global Scope.
+                    <br> => In a browser environment, the global scope is controlled by the window object while in Node.js, it’s controlled by the global object. 
                   </p>
-                </li>
-                <li class="fs-4">
-                  <h6 class="fs-4">Regular function</h6>
-                  <p class="fs-5">
-                    In a traditional function, its internal this value is
-                    dynamic, it depends on how the function is invoked
-                  </p>
-                  <h6 class="fs-4">Arrow function</h6>
-                  <p class="fs-5">
-                    In the arrow function, there are no this, if we access this
-                    in the arrow function it will return the this of the closest
-                    non-arrow parent function.
-                  </p>
-                </li>
-              </ol>
+               
+                
+              </div>
             </div>
           </div>
         </div>
@@ -153,7 +129,7 @@
               aria-expanded="false"
               aria-controls="flush-collapseThree"
             >
-              Why js Use Template String?
+            how event loop works?
             </button>
           </h2>
           <div
@@ -163,21 +139,52 @@
             data-bs-parent="#accordionFlushExample"
           >
             <div class="accordion-body">
-              <h6 class="fs-4">Template String:</h6>
+              <h6 class="fs-4">Event Loop:</h6>
               <p class="fs-5">
-                Template strings are a powerful feature of modern JavaScript
-                released in ES6. It lets us insert/interpolate variables and
-                expressions into strings without needing to concatenate like in
-                older versions of JavaScript. It allows us to create strings
-                that are complex and contain dynamic elements. Another great
-                thing that comes with template strings are tags. Tags are
-                functions that take a string and the decomposed parts of the
-                string as parameters and are great for converting strings to
-                different entities.
+                Event loop is an endless loop, which waits for tasks, executes them and then sleeps until it receives more tasks.
+The event loop executes tasks from the event queue only when the call stack is empty i.e. there is no ongoing task.
+The event loop allows us to use callbacks and promises.
+The event loop executes the tasks starting from the oldest first.
               </p>
             </div>
           </div>
         </div>
+        <div class="accordion-item shadow">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button
+                class="accordion-button collapsed fw-bold py-2 my-3 rounded fs-3 bg-info"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFour"
+                aria-expanded="false"
+                aria-controls="flush-collapseFour"
+              >
+              Define Ways Of undefined in js?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingFour"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <h6 class="fs-4">8 ways:</h6>
+                <p class="fs-5">
+              <ol class="fs-5">
+                <li>Varible without initialise.</li>
+                <li>Function with no return.</li>
+                <li>Parameter  that is not passed will be undefined.</li>
+                <li>If return has nothing on theright side will return undefined.</li>
+                <li>Property that does not exists on an object will give undefined.</li>
+                <li>Accesing array elements outside of the index range.</li>
+                <li>Deleting an element inside an array.</li>
+                <li>Set a value directly to undefined./li>
+              </ol>
+                </p>
+              </div>
+            </div>
+          </div>
       </div>
     </main>
     <!-- foooter  -->
