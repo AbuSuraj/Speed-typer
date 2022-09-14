@@ -63,8 +63,8 @@ body {
 }
 #result {
   position: fixed;
-  top: 10%; 
-  left: 10%;
+  top: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
   width: 400px;
@@ -97,9 +97,9 @@ body {
   display: none;
   
 }
-.p-center{
+/* .p-center{
   margin: 250px 450px;
-}
+} */
 .title {
   text-align: center;
   color: white;
@@ -146,9 +146,9 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .card {
@@ -156,8 +156,9 @@ button {
   height: 100%;
   padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   padding: 20px 30px;
   color: white;
   border-radius: 15px;
@@ -193,4 +194,8 @@ button {
   .card {
     flex-direction: column;
   }
+  #histories {
+    grid-template-columns:  1fr
+}
+
 }
